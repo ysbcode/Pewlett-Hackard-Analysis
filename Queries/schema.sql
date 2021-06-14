@@ -43,3 +43,13 @@ CREATE TABLE titles (
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
   PRIMARY KEY (emp_no)
 );
+
+DROP TABLE titles CASCADE;
+CREATE TABLE titles (
+     emp_no int NOT NULL,
+	 title varchar not null, 
+	 from_date date not null,
+	 to_date date NOT NULL,
+Foreign key (emp_no) References employees (emp_no),
+     PRIMARY KEY (emp_no, from_date)
+);
